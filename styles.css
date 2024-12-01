@@ -1,45 +1,284 @@
-/* Global Styles */
 body {
   font-family: "Arial", sans-serif;
-  line-height: 1.6;
+  background-color: #1c1c1e;
+  color: #e0e0e0;
+  margin: 0;
 }
 
+/* Navbar Styling */
+.navbar-nav .nav-link:hover {
+  color: #f44336;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+}
+
+/* Fixed position for navbar */
+.navbar {
+  z-index: 1000;
+}
+
+/* Navbar Toggle Button */
+.navbar-toggler-icon {
+  background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"%3E%3Cpath stroke="rgb(244, 67, 54)" stroke-width="2" d="M3 6h24M3 14h24M3 22h24"/%3E%3C/svg%3E');
+}
+
+/* Active Nav-Link */
+.nav-link.active {
+  color: #f44336 !important;
+}
+
+/* Make the navbar more compact on mobile */
+@media (max-width: 768px) {
+  .navbar-nav {
+    text-align: center;
+  }
+  .navbar-toggler {
+    border: 1px solid #f44336;
+  }
+}
+
+/* Hero Section Styling */
+/* General Styling */
 .hero-section {
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)), url("https://via.placeholder.com/1920x600") no-repeat center center/cover;
-  color: #fff;
-  min-height: 80vh;
-  display: flex;
-  align-items: center;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.85)), url("img/herosection.jpg") no-repeat center center/cover;
+  padding: 80px 20px;
+  position: relative;
 }
 
-.hero-section h1 {
-  font-size: 2.5rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+.hero-text h1 {
+  font-size: 3.5rem;
+  color: #ffffff;
+  line-height: 1.2;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+}
+.text-muted {
+  --bs-text-opacity: 1;
+  color: rgb(255 255 255 / 75%) !important;
+}
+.hero-text p {
+  font-size: 1.25rem;
+  color: #dcdcdc;
 }
 
-.hero-section img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px;
+.hero-text a {
+  transition: all 0.3s ease;
 }
 
+.hero-text a:hover {
+  transform: scale(1.05);
+}
+
+.hero-image {
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 20px;
+  transition: transform 0.5s ease;
+}
+
+.hero-image:hover {
+  transform: scale(1.1);
+}
+
+/* Overlay Effect for Hero Image */
+.hero-overlay {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 0, 0, 0.3);
+  border-radius: 20px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Modern Shadows */
+.btn-danger {
+  background-color: #ff4d4d;
+  border: none;
+  padding: 0.8rem 2rem;
+  box-shadow: 0 8px 15px rgba(255, 77, 77, 0.3);
+}
+
+.btn-danger:hover {
+  background-color: #d32f2f;
+}
+
+.btn-outline-light {
+  padding: 0.8rem 2rem;
+  border-width: 2px;
+  box-shadow: 0 6px 10px rgba(255, 255, 255, 0.2);
+}
+
+.btn-outline-light:hover {
+  background-color: #ffffff;
+  color: #000;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .hero-text h1 {
+    font-size: 2.5rem;
+  }
+  .hero-text p {
+    font-size: 1rem;
+  }
+  .hero-image {
+    max-height: 300px;
+  }
+}
+
+/* Game Features Section - Zombie Apocalypse Theme */
+#game-features {
+  background-color: #1c1c1e; /* Dark apocalypse background */
+  padding: 50px 0;
+}
+
+/* Feature Card */
 .feature-card {
-  transition: transform 0.3s, box-shadow 0.3s;
+  background: #2c2c2e; /* Dark gray card background */
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Stronger shadow for depth */
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
 }
 
 .feature-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transform: translateY(-10px);
+  box-shadow: 0 6px 15px rgba(255, 0, 0, 0.4); /* Red shadow for danger effect */
 }
 
-.cta-section {
-  background: linear-gradient(to right, #333, #555);
+/* Card Image */
+.card-image {
+  border-radius: 10px;
+  max-height: 180px;
+  object-fit: cover;
+  width: 100%;
+  border: 2px solid rgba(255, 0, 0, 0.5); /* Red border around images */
 }
 
-.carousel-inner p {
+/* Card Title */
+.feature-card h5 {
+  margin-top: 15px;
+  font-size: 1.3rem;
+  color: #f0c674; /* Apocalypse warning yellow */
+}
+
+/* Card Text */
+.feature-card p {
+  color: #cccccc; /* Soft gray for text */
+  font-size: 0.95rem;
+  margin-top: 10px;
+}
+
+/* Zombie Apocalypse Effect */
+#game-features h2 {
+  color: #ff4d4d; /* Bloody red for headings */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* Hover Effect for Card */
+.feature-card:hover h5 {
+  color: #ff4d4d; /* Title turns red on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .feature-card {
+    margin-bottom: 20px;
+  }
+
+  .card-image {
+    max-height: 150px;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .feature-card {
+    margin-bottom: 20px;
+  }
+
+  .card-image {
+    max-height: 150px;
+  }
+}
+
+/* Testimonials Section */
+#testimonials {
+  background-color: #131314;
+  color: #dcdcdc;
+  padding: 3rem 0;
+}
+
+.carousel-inner .carousel-item {
   font-size: 1.2rem;
-  color: #333;
-  font-style: italic;
+}
+
+/* Call-to-Action Section */
+.cta-section {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(20, 20, 20, 0.95));
+  background-image: url("img/cta-bg.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.cta-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #f44336;
+}
+
+.cta-section p {
+  margin-bottom: 2rem;
+}
+
+.btn-danger {
+  background-color: #f44336;
+  border: none;
+}
+
+.btn-danger:hover {
+  background-color: #d32f2f;
+}
+
+/* Footer */
+footer {
+  background-color: #131314;
+  color: #e0e0e0;
+  text-shadow: 1px 1px 2px #000;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+
+  .hero-section p {
+    font-size: 1rem;
+  }
+}
+
+/* Wrapper untuk memastikan proporsi gambar */
+.feature-image-wrapper {
+  height: 200px; /* Tinggi konsisten untuk gambar */
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Gambar akan memenuhi container dengan crop */
+.feature-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* Memastikan gambar di-crop agar sesuai */
+}
+
+/* Membatasi tinggi card agar seragam */
+.card {
+  border: none;
+  background-color: #262626;
 }
